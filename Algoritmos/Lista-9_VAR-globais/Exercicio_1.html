@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    
+</head>
+<body>
+   <img id="imagem" 
+        src="https://thumbs.dreamstime.com/z/c%C3%A9rebro-desenho-do-vetor-137925598.jpg?w=768" style="width: 250px;">
+        <br>
+
+   <button onclick="aumentar()">Aumentar </button>
+   <button onclick="diminuir()">Diminuir</button>
+</body>
+</html>
+<script>
+    var tamanhoImg = 250
+
+    function aumentar(){
+       tamanhoImg +=  10
+        imagem.style.width = tamanhoImg + `px`
+    }
+    function diminuir(){
+        tamanhoImg -= 10
+        imagem.style.width = tamanhoImg + `px`
+    }
+
+</script>

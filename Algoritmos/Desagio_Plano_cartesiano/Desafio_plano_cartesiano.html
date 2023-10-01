@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primeiro Objeto</h1>
+
+    <span>insira x0</span> <input id="x0_po"><br>
+    <span>insira y0</span> <input id="y0_po"><br>
+    <span>insira x1</span> <input id="x1_po"><br>
+    <span>insira y1</span> <input id="y1_po"><br>
+
+    <h1>Segundo Objeto</h1>
+
+    <span>insira x0</span> <input id="x0_so"><br>
+    <span>insira y0</span> <input id="y0_so"><br>
+    <span>insira x1</span> <input id="x1_so"><br>
+    <span>insira y1</span> <input id="y1_so"><br>
+   
+    <button onclick="verificarColisao()">Verificar Posições</button>
+
+    <span id="testevalidez"></span>
+   
+    <h2>As coordenadas são:</h2>
+    <span id="coordenadas"></span>
+
+    <strong id="colisao" style="color: red;"></strong>
+</body>
+</html>
+<script>
+    function verificarColisao(){
+        var x0po = x0_po.value
+        var x1po = x1_po.value
+        var y0po = y0_po.value
+        var y1po = y1_po.value
+
+        var x0so = x0_so.value
+        var x1so = x1_so.value
+        var y0so = y0_so.value
+        var y1so = y1_so.value
+
+       
+        if(x0po>x1po){ testevalidez.innerHTML = `valor invalido em X. <br>`}
+        if(y0po>y1po){ testevalidez.innerHTML += `valor invalido em Y.<br>`}
+        if(x0so>x1so){ testevalidez.innerHTML += `valor invalido em X.<br>`}
+        if(y0so>y1so){ testevalidez.innerHTML += `valor invalido em Y.<br>`}
+
+        coordenadas.innerHTML = `Primeiro objeto:(${x0po},${y0po},${x1po},${y1po}) <br> Segundo objeto: (${x0so},${y0so}.${x1so},${y1so})<br>`
+
+        var primeiraLinhapo = (Number(x0po) + Number(y0po))
+        var segundaLinhapo = (Number(x1po) + Number(y1po))
+        var terceiraLinhapo =
+        var quartaLinhapo =
+
+        var primeiraLinhaso = (Number(x0so)+ Number(y0so))
+        var segundaLinhaso = (Number(x1so) + Number(y1so))
+
+        if( primeiraLinhapo=primeiraLinhaso){colisao.innerHTML = `1`}
+        if( primeiraLinhapo=segundaLinhaso){colisao.innerHTML = `1`}
+
+        if( segundaLinhapo=primeiraLinhaso){colisao.innerHTML = `1`}
+        if( segundaLinhapo=segundaLinhapo){colisao.innerHTML = `1`}
+       
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    Qual o seu nome?
+    <input type="text" id="student">
+    <br>
+    Insira a nota da avaliação continuada:
+    <input type="text" id="test1">
+    <br>
+    Insira a nota da avaliação semestral:
+    <input type="text" id="test2">
+    <br>
+
+    <button onclick="media()"> Calcular </button>
+</body>
+</html>
+<script>
+    function media(){
+        alert (`A média de ${student.value} é ${(test1.value * 4 / 10) + (test2.value * 6 / 10)}`)
+    }
+</script>

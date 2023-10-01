@@ -1,0 +1,35 @@
+.div_objetos{
+    display: flex;
+    justify-content: space-between;
+    font-family: fantasy;
+    width: 700px;
+    margin-top: 50px;
+}
+img{
+    width: 190px;
+    height: 200px;
+    
+} 
+.mover{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.fundo{
+    background-image: url(https://istoedinheiro.com.br/wp-content/uploads/sites/17/2021/11/simpsons-e1636427462490.jpg?x46096);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+body{
+    margin: 0;
+}
+.div_bart{
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    height: 90%;
+}

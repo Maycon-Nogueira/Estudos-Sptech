@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <span>Insira a temperatura do ambiente: </span>
+    <input type="number" id="temperatura"> <br>
+    <button onclick="verificar_clima()"> Verificar clima </button>
+    <div id="mostrar_imagem">
+     
+    </div>
+</body>
+</html>
+<script>
+
+function verificar_clima(){
+    if(temperatura.value<10) {
+        mostrar_imagem.innerHTML= `<img src="https://boaforma.abril.com.br/wp-content/uploads/sites/2/2018/12/Geladeira.jpg?quality=90&strip=info">`
+    }
+    else{
+        mostrar_imagem.innerHTML=` <img src="https://4.bp.blogspot.com/-0-39tG_c95M/UOXDECZ27JI/AAAAAAAAAuk/eMwjOmBEftg/s1600/image.jpg">`
+    }
+}
+
+</script>

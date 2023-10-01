@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <span>Insira a quantide de chocolates comprados</span>
+    <input id="qtdChocolates"><br>
+
+    <button onclick="calcular()">Compra</button>
+    <div id="mostrarValor"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var ChocolatesVarejo = Number(qtdChocolates.value) * 3;
+        var ChocolateAtacado = Number(qtdChocolates.value) *2.5;
+
+        if(qtdChocolates.value<12){
+            mostrarValor.innerHTML = `O valor da sua compra foi de ${ChocolatesVarejo}`
+        }
+        else{
+            mostrarValor.innerHTML=`O valor da sua compra foi de ${ChocolateAtacado}`
+        }
+    }
+</script>

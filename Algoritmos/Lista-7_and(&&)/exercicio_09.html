@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 9</title>
+</head>
+<body>
+    <span> altura inicial: </span>
+    <input id="input_altura_inicial"><br>
+
+    <span> altura final: </span>
+    <input id="input_altura_final"><br>
+
+    <span> nome do candidato: </span>
+    <input id="input_nome_candidato"><br>
+
+    <span> altura do candidato: </span>
+    <input id="input_altura_candidato"><br>
+
+    <button onclick="verificarcandidato()">Verificar candidato</button><br>
+
+    <div id="div_resultado"></div> 
+</body>
+</html>
+<script>
+    function verificarcandidato(){
+        var inicial = input_altura_inicial.value
+        var final = input_altura_final.value
+        var candidato = input_nome_candidato.value
+        var alturaCandidato = input_altura_candidato.value
+
+        if(inicial > 1 && final>inicial){
+            if(alturaCandidato >= inicial && alturaCandidato<= final){
+                div_resultado.innerHTML+=`O candidato ${candidato} com altura de ${alturaCandidato} participará do processo de seleção de pilotos!<br>`
+            }
+            else {
+                div_resultado.innerHTML += `Infelizmente, o candidato ${candidato} com altura de ${alturaCandidato} não atende aos requisitos.<br>`
+            }
+        }
+        else{
+            alert(`Os dados informados estão incorretos - informe novamente!`)
+        }
+    }
+
+</script>

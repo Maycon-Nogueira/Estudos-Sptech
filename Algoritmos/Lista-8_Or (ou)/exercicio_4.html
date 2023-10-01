@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 4</title>
+</head>
+<body>
+    <span>Qual será o metodo de pagamento?</span><br>
+     <span>(Métodos de pagamentos aceitos: Dinheiro, Crédito, Débito e Boleto)</span><br>
+     <input id="input_formaPagamento"><br>
+   
+
+    <button onclick="analisarCompra()">Analisar compra</button><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+   function analisarCompra(){
+    var pagamento = input_formaPagamento.value
+
+    if(pagamento == `Dinheiro` || pagamento == `Débito`){
+        div_resultado.innerHTML = `Você terá que pagar a vista`
+    }
+    else if(pagamento == `Crédito` || pagamento == `Boleto`){
+        div_resultado.innerHTML = `Pagamento poderá ser parcelado`
+    }
+    else{div_resultado.innerHTML = `Forma de pagamento inválida.`}
+   }
+
+</script>

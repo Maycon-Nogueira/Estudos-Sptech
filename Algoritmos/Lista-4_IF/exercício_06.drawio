@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2023-08-27T19:26:16.703Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.62" etag="LcQ0vbeJnHF1JyDU7KD_" version="21.6.9" type="device">
+  <diagram name="Página-1" id="85_Vi25NjM4KSWe2ROFU">
+    <mxGraphModel dx="880" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iGVaWSKgFV0cKThFAcae-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="iGVaWSKgFV0cKThFAcae-1" target="iGVaWSKgFV0cKThFAcae-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-1" value="&lt;h1&gt;exercício 6&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="175" y="30" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-2" target="iGVaWSKgFV0cKThFAcae-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-2" value="Ler valor da renda familiar ${renda}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15" y="125" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-4" target="iGVaWSKgFV0cKThFAcae-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-4" value="Ler valor da prestação ${prest}" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="15" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-6" target="iGVaWSKgFV0cKThFAcae-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-6" value="aguardar sinal para calcular" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="32.5" y="390" width="85" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-8" target="iGVaWSKgFV0cKThFAcae-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-8" value="Calcule:&lt;br&gt;${prest} / ${renda} * 100 = ${valorporcento}" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-16" target="iGVaWSKgFV0cKThFAcae-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-16" value="Exiba: &lt;br&gt;&quot;A prestação corresponde a ${valorporcento}% da renda familiar" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="390" y="375" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="iGVaWSKgFV0cKThFAcae-18" target="iGVaWSKgFV0cKThFAcae-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mpNy192iGc8g2HKEmVqf-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iGVaWSKgFV0cKThFAcae-18" target="mpNy192iGc8g2HKEmVqf-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-18" value="" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="420" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="iGVaWSKgFV0cKThFAcae-20" target="iGVaWSKgFV0cKThFAcae-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-20" value="SE ${valorporcento} &amp;gt; 30&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="385" y="110" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mpNy192iGc8g2HKEmVqf-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iGVaWSKgFV0cKThFAcae-22" target="iGVaWSKgFV0cKThFAcae-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-22" value="Exiba em negrito e em vermelho:&lt;br&gt;&quot;Será necessário complementar a renda familiar&quot;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="105" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-24" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;" parent="1" vertex="1">
+          <mxGeometry x="720" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="iGVaWSKgFV0cKThFAcae-27" target="iGVaWSKgFV0cKThFAcae-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iGVaWSKgFV0cKThFAcae-27" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;gradientColor=#97d077;" parent="1" vertex="1">
+          <mxGeometry x="45" y="15" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mpNy192iGc8g2HKEmVqf-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="mpNy192iGc8g2HKEmVqf-3" target="iGVaWSKgFV0cKThFAcae-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mpNy192iGc8g2HKEmVqf-3" value="Se ${valor porcento} &amp;lt;=30" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="245" width="90" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

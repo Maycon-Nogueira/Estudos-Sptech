@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h1>Bem vindo ao mundo de Dragon Ball</h1>
+    Insira o nome do guerreiro:
+    <input type="text" id="warrior">
+    <br>
+    Insira o KI normal do seu guerreiro:
+    <input type="text" id="KI">
+    <br>
+    <button onclick="power()"> ver KI em cada forma </button>
+</body>
+</html>
+<script>
+    function power(){
+        alert (`O KI do ${warrior.value} em sua forma Super Sayajin é ${Number(KI.value) * 50}`)
+
+        alert (`O KI do ${name.value} em sua forma Super Sayajin 2 é: ${Number(KI.value) * 100}`)
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 8</title>
+</head>
+<body>
+    <span>Empresa: </span>
+    <input id="input_empresa">
+    <br>
+    <span>Valor da bolsa(R$): </span>
+    <input id="input_bolsa">
+    <br>
+    <span>Valor do VR(R$-Dia): </span>
+    <input id="input_vr">
+    <br>
+    <span>Distancia empresa-SPTech(Min): </span>
+    <input id="input_distancia">
+    <br>
+    <button onclick="preferidas()">É preferida?</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+function preferidas(){
+    var empresa = input_empresa.value;
+    var bolsa = input_bolsa.value;
+    var vr = input_vr.value;
+    var distancia = input_distancia.value;
+
+    if(bolsa>=1800 || vr>= 20 || distancia<=30){
+        resultado.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+    }
+    else{
+        resultado.innerHTML = `A empresa ${empresa} está fora da sua lista`
+    }
+}
+</script>

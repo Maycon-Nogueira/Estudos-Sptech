@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <H1>Bem vindo algoritmolândia</H1>
+
+    <span>Insira a quantidade de KWh consumidas no mês:</span>
+
+    <input id="KWhMes"><br>
+
+    <button onclick="calcular()"> Calcular conta de luz </button>
+
+    <div id="div_01"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+    var conta = Number(KWhMes.value)*0.85;
+
+    if(KWhMes.value<100){
+        conta = conta - (conta *0.10)
+    };
+            alert(`O valor da conta a ser pago é de: R$${conta}`)
+    };
+</script>

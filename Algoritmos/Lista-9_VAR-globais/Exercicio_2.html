@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <span>Qual seu salário atual?</span>
+    <input id="input_salario">
+    <br>
+    <button onclick="confirmar()">Confirmar salário</button>
+
+    <button onclick="pagar100()">Pagar conta de 100</button>
+
+    <button onclick="pagar500()">Pagar conta de 500</button>
+
+    <button onclick="ganhar2k()">Ganhar 2000 na loteria</button>
+    <div id="div_mostrarGrana"></div>
+
+</body>
+</html>
+    <script>
+        var salario = 0
+        function confirmar(){
+            salario = input_salario.value
+
+            div_mostrarGrana.innerHTML = `Grana atual: R$${salario}`
+        }
+        function pagar100(){
+            salario -= 100
+
+            div_mostrarGrana.innerHTML = `Grana atual: R$${salario}`
+
+        }
+
+        function pagar500(){
+            salario -= 500
+
+            div_mostrarGrana.innerHTML = `Grana atual: R$${salario}`
+
+        }
+
+        function ganhar2k(){
+            salario += 2000
+
+            div_mostrarGrana.innerHTML = `Grana atual: R$${salario}`
+        }
+
+    </script>

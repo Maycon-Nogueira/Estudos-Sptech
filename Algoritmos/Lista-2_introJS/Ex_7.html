@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    Insira o valor da passagem
+    <input type="text" id="cust">
+    <br>
+    Quantas viagens você fará este mês?
+    <input type="text" id="travels">
+    <button onclick="result()">
+    Ver economia</button>
+</body>
+</html>
+<script>
+    function result(){
+        alert(`Você economizará R$${cust.value * travels.value} por mês`)
+    }
+
+</script>

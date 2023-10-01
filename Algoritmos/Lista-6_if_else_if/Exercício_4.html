@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <span>Informe o peso da criança:</span>
+    <input id="input_peso">
+
+    <button onclick="verificar_peso()">Verificar peso</button><br>
+    <span id="situacao"></span>
+
+</body>
+</html>
+<script>
+    function verificar_peso(){
+        var peso = input_peso.value;
+
+        if(peso==18.3){situacao.innerHTML=`Peso Perfeito!`}
+
+        else if(peso<13.5){situacao.innerHTML = `Abaixo do peso`}
+
+        else if(peso<21.2){situacao.innerHTML=`Peso na média`}
+
+        else{situacao.innerHTML=`Acima do peso`}
+    }
+</script>

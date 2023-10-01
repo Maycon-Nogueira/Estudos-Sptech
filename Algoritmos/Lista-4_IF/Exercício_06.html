@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body>
+    <span>Insira o valor da renda familiar:</span>
+    <input type="text" id="renda"><br>
+    <span>Insira o valor da prestação:</span>
+    <input type="text" id="prest"><br>
+    <button onclick="financiar()">Verificar financiamento</button>
+    <div id="msg"></div>
+    <div id="alerta" style="color: red;" ></div>
+</body>
+</html>
+<script>
+    
+
+    function financiar(){
+        var Vporcem = Number(prest.value) / Number(renda.value) * 100;
+
+        msg.innerHTML = `A prestação corresponde a ${Vporcem}% da renda familiar`;
+
+    if (Vporcem>=30) {
+        alerta.innerHTML = `<strong>Será necessário complementar a renda familiar</strong>`};
+    }
+</script>

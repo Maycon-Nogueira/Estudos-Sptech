@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    <span>Insira sua nota no ENEM:</span>
+    <input id="input_notaENEM"><br>
+
+    <span>Insira sua nota no vestibular interno</span>
+    <input id="input_notaVestibular"><br>
+
+    <button onclick="avaliar()">Avaliação</button><br>
+
+    <span id="span_resultado"></span>
+</body>
+</html>
+<script>
+function avaliar(){
+    var enem = input_notaENEM.value
+    var vestibular = input_notaVestibular.value
+
+    if(enem>=800 || vestibular>=700){
+        span_resultado.innerHTML = `Parabéns, Aprovado`
+    }
+    else{alert(`Tente semestre que vem!`)}
+
+}
+</script>

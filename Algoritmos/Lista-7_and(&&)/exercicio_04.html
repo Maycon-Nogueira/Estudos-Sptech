@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4</title>
+</head>
+<body>
+    <span>Em qual horário você costuma assistir à Netflix?</span>
+    <input id="input_horario"><br>
+    <button onclick="analisarhora()">Ver recomendação</button>
+</body>
+</html>
+    <script>
+        function analisarhora(){
+            var hora = input_horario.value
+
+            if(hora>=19 && hora<=21){
+                alert(`Não é recomendável que você assista sua série favorita no horário das ${hora}!`)
+            }
+            else{
+                alert(`O horário das ${hora} é adequado para assistir sua série favorita!`)
+            }
+        }
+    </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <span>Quantas latinhas de refri você toma por dia?</span>
+    <input type="text" id="latas">
+<br>
+   <button onclick="qtd()">Quantos refris?</button>
+   <div id="div_01"></div>
+</body>
+</html>
+<script>
+    function qtd(){
+        var total = Number(latas.value) * 365
+
+        div_01.innerHTML = `
+        Você bebe ${total} de refris por ano`
+        
+        if(total>=500) 
+        div_01.innerHTML =
+        ` 
+        Você bebe ${total} de refris por ano<br>
+        Cuidado com a dibetes`
+    }
+</script>

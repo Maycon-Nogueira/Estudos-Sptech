@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="styleEX3.css">
+</head>
+<body>
+    <span> Insira o seu valor guardado: </span>
+    <input type="number" id="input_valorGuardado">
+
+    <div class="receberAzul"> Total guardado no cofrinho: R$<u id="qtdReais">0</u></div>
+
+    <div class="receberAzul"> Depósitos efetuados: <u id="ctgDepositos">0</u></div>
+
+    <div class="receberAzul"> Retiradas efetuadas: <u id="ctgRetiradas">0</u></div>
+
+    <button onclick="inserirValor()">Inserir valor guardado</button>
+    <br>
+
+    <button onclick="deposito50c()">Depositar 0,50</button>
+
+    <button onclick="deposito2()">Depositar 2,00</button>
+
+    <button onclick="retira50c()">Retirar 0,50</button>
+
+    <button onclick="retirar()">Retirar</button>
+
+</body>
+</html>
+<script>
+    var totalGuardado = 0
+    var qtdDepositos = 0
+    var qtdRetiradas = 0
+
+    function inserirValor(){
+        totalGuardado = Number( input_valorGuardado.value)
+
+        qtdReais.innerHTML = totalGuardado
+    }
+
+    function deposito50c(){
+        
+        
+        qtdDepositos += 1;
+        totalGuardado += 0.50;
+
+        ctgDepositos.innerHTML = qtdDepositos;
+        
+        qtdReais.innerHTML = totalGuardado;
+    }
+    function deposito2(){
+        
+        qtdDepositos += 1
+        totalGuardado +=  2
+
+        ctgDepositos.innerHTML = qtdDepositos;
+
+        qtdReais.innerHTML = totalGuardado;
+    }
+    function retira50c(){
+        
+        qtdRetiradas += 1
+        totalGuardado -=0.50
+
+        ctgRetiradas.innerHTML = qtdRetiradas
+
+        qtdReais.innerHTML = totalGuardado
+    }
+    function retirar(){
+        
+        qtdRetiradas += 1
+        totalGuardado = 0
+
+        ctgRetiradas.innerHTML = qtdRetiradas
+
+        
+        qtdReais.innerHTML = totalGuardado
+    }
+
+
+</script>

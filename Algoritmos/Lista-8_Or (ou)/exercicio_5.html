@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 5</title>
+</head>
+<body>
+    <span>Insira a temperatura do ambiente:</span>
+    <input id="input_temperatura"><br>
+
+    <button onclick="analiseClima()">Analisar Clima</button>
+</body>
+</html>
+<script>
+function analiseClima(){
+    var temperatura = input_temperatura.value
+
+    if(temperatura <21 || temperatura>24){
+        alert(`ALERTA DE DESCONFORTO!`)
+        
+        if(temperatura<21){
+            alert(`As pessoas vão ter hipotermia`)
+        }
+        else{alert(`As pessoas vão derreter`)}
+
+    }
+}
+</script>

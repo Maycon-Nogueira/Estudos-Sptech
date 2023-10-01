@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <span>insira quantos pães franceses você tem comido por dia: </span>
+    <input id="input_paes"><br>
+
+    <span>Insira quantos pacotes de bolacha recheada você tem comido por dia:</span>
+    <input id="input_bolachas"><br>
+
+    <span>Insira quantos copos de achocolatado você tem tomado por dia: </span>
+    <input id="input_achocolatados"><br>
+
+    <button onclick="verificar_calorias()">Verificar calorias</button>
+
+    <div id="resultado_saude"></div>
+</body>
+</html>
+<script>
+    function verificar_calorias(){
+        var paes = Number(input_paes.value)
+        var bolachas = Number(input_bolachas.value)
+        var achocolatados = Number( input_achocolatados.value)
+        var calPaes = paes * 50
+        var calBolachas = bolachas * 80
+        var calAchocolatados = achocolatados * 70
+        var calorias_totais = calPaes + calBolachas + calAchocolatados
+
+        if(calorias_totais<200){ resultado_saude.innerHTML = `Parabéns, vai ficar em forma!`}
+
+        else if (calorias_totais<=400){resultado_saude.innerHTML = `Cuidado, vai ficar menos saudável!`}
+
+        else {resultado_saude.innerHTML = `Alerta crítico de saúde!!!`}
+
+    }
+</script>

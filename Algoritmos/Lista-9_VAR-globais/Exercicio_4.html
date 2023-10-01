@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+
+    <link rel="stylesheet" href="styleEX4.css">
+
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="div_objetos">
+
+
+            <span>Insira a quantidade de pixels: </span>
+            <br>
+            <input id="input_qtdPixels">
+            <br>
+            <button class="mover" onclick="moverEsq()">Mover p/ Esquerda</button>
+
+            <button class="mover" onclick="moverDir()">Mover p/ Direita</button>
+        </div>
+        <div class="div_bart">
+            <img id="img_bart" src="img/pngwing.com.png" style="margin-left: 0;">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var movimento = 0;
+
+    function moverEsq() {
+
+        movimento -= Number(input_qtdPixels.value)
+
+        img_bart.style.marginLeft = movimento + `px`;
+    }
+
+    function moverDir() {
+        movimento += Number(input_qtdPixels.value)
+
+        img_bart.style.marginLeft = movimento + `px`;
+    }
+</script>

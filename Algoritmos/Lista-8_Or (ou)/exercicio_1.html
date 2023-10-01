@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>
+    <span> Insira as frutas servidas:</span>
+    <input id="input_fruta"><br>
+
+    <button onclick="comer()">Vai comer?</button>
+
+</body>
+</html>
+<script>
+    function comer(){
+    var fruta = input_fruta.value
+
+        if (fruta == `abacaxi` || fruta == `uva`){
+            alert(`Sim, vai comer ${fruta}`)
+        }
+        else{ alert(`A fruta ${fruta} ela não come`)}
+
+    }
+</script>

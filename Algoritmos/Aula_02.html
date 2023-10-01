@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o 1º numero:
+    <input type="text" id ="input_primeiro">
+    digite o 2º numero:
+    <input type="text" id ="input_segundo">
+
+    <button onclick="multiplicar()">
+        Multiplicar
+    <button onclick="Dividir()">
+        Dividir
+    <button onclick="somar()">
+        Somar
+    <button onclick="subtrair()">
+        Subtrair
+</body>
+</html>
+<script>
+    function multiplicar(){
+      alert("o primeiro valor multiplicado pelo segundo é " + (input_primeiro.value * input_segundo.value))  
+
+    }
+
+</script>

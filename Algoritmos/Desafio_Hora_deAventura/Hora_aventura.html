@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desafio</title>
+
+</head>
+
+<body>
+
+    <span>Insira o seu nome:</span>
+
+    <input id="nome_usuario"><br>
+
+ 
+
+    <div>Selecione o ultimo reino visitado:</div>
+
+    <button onclick="mundodoce()">Doce</button>
+
+    <button onclick="mundofogo()">Fogo</button>
+
+    <button onclick="mundogelado()">Gelado</button>
+
+    <button onclick="mundogeleca()">Geleca</button>
+
+    <button onclick="mundocaroço()">Caroço</button>
+
+    <button onclick="mundovampiro()">Vampiros</button>
+
+ 
+
+    <span>Insira a sua idade: </span>
+
+    <input id="idade_usuario" min="0" max="1000"> <br>
+
+    <span>Insira a quantidade de inimigos derrotados: </span>
+
+    <input id="inimigos_derrotados" min="0"><br>
+
+    <span>Insira a quantidade de moedas que possui: </span>
+
+    <input id="moedas_usuario"><br>
+
+    <button onclick="explorar()">Iniciar Exploração</button>
+
+</body>
+
+</html>
+
+<script>
+
+ 
+
+    if(mundodoce=true){    function explorar(){
+
+        var nome = nome_usuario.value;
+
+        var idade = idade_usuario.value;
+
+        var reino = reino_visitado.value;
+
+        var qtdInimi = inimigos_derrotados.value;
+
+        var ouro = Number(moedas_usuario.value);
+
+        var acrescimoFogo = ouro * 0.08;
+
+ 
+
+            if(reino == "Doce"){
+
+                if(ouro>80){
+
+                    if(idade>=10)
+
+                        reino_fogo.innerHTML = ` Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de fogo o seu dinheiro ganhará um acréscimo de 8% em moedas de ouro que será ${acrescimoFogo} moedas, sendo assim o valor total do seu dinheiro agora será de ${ouro + acrescimoFogo} moedas.`
+
+                    alert(`Tome cuidado para não se apaixonar pela princesa de fogo!`)
+
+                    }
+
+                }
+
+             }
+
+ 
+
+    }
+
+ 
+
+</script>

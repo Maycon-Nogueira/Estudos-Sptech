@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <span>Insira a frequência do aluno:</span>
+    <input id="frequenciaAluno"><br>
+   
+    <button onclick="analisarFreq()">Analisar frequência</button>
+    <div id="mostrar_imagem">
+    </div>
+   
+</body>
+</html>
+<script>
+    function analisarFreq(){
+        if(frequenciaAluno.value<50){
+            mostrar_imagem.innerHTML= `<img src="https://th.bing.com/th/id/R.af11876b602304949b663874ad66bd2e?rik=Jbh5ZGiXZFAg8w&pid=ImgRaw&r=0">`
+        }
+        else{
+            mostrar_imagem.innerHTML = `<img src="https://media.licdn.com/dms/image/D4D03AQG3qrkDGxtnRg/profile-displayphoto-shrink_800_800/0/1694643803883?e=1700092800&v=beta&t=CWTjjfRUm9_28wKZD7Z-X1Yjq7wXQK1dZU_Nb8opfmE">`
+        }
+    }
+</script>
