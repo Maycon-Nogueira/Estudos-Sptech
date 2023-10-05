@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    <span> Insira o numero inicial:</span>
+    <input id="input_comeco">
+    <br>
+    <span> Insira o numero final:</span>
+    <input id="input_final">
+    <br>
+    <button onclick="pares()">S2 Pares</button>
+    <br>
+    <span id="span_pares"></span>
+</body>
+</html>
+<script>
+    function pares(){
+        var comeco = input_comeco.value;
+        var fim = Number(input_final.value);
+        var texto = ``;
+        var repeticao = 0
+
+        if (comeco>fim){
+            texto = `O intervalo digitado está incorreto!`;
+        }
+        else if (comeco.endsWith(`0`) == true || comeco.endsWith(`2`) == true || comeco.endsWith(`4`) == true || comeco.endsWith(`6`) == true || comeco.endsWith(`8`) == true ) 
+        {
+            var inicial = Number(comeco)
+
+            while (inicial<=fim){
+             texto += inicial + `<br>`
+
+             inicial += 2   
+            }
+        }
+        else if (comeco.endsWith(`1`) == true || comeco.endsWith(`3`) == true || comeco.endsWith(`5`) == true || comeco.endsWith(`7`) == true || comeco.endsWith(`9`) == true ) 
+        {
+            var inicial = Number(comeco) + 1
+
+            while (inicial<=fim){
+             texto += inicial + `<br>`
+
+             inicial += 2   
+            }
+        }
+        span_pares.innerHTML = texto 
+
+
+    }
+
+</script>

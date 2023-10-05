@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    <span>Insira o numero desejado:</span>
+    <input id="input_multiplo">
+    <button onclick="exibir()">Adoro múltiplos de 5</button>
+    <br>
+    <span id="span_exibir"></span>
+</body>
+</html>
+<script>
+    function exibir(){
+        var texto = ``
+        var multiplo = Number(input_multiplo.value)
+        
+        var repeticao = 0
+
+        if (multiplo<20 || multiplo>100){
+            span_exibir.innerHTML = multiplo + ` é um numero invalido, insira um valor entre 20 e 100`;
+        }
+        else{
+            while(repeticao <= multiplo){
+                texto += repeticao + `<br>`
+                span_exibir.innerHTML = texto;
+
+                repeticao += 5;
+            }
+        }
+
+    }
+</script>

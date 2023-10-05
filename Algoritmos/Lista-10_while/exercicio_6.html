@@ -12,12 +12,25 @@
     <span> O quanto você ama esta pessoa: </span>
     <input id="input_qtdAmor">
     <br>
-    <button onclick="expressar()" >Expressar amor</button>
+    <button onclick="expressar()" >Expressar amor</button><br>
+    <span id="span_texto"></span>
 </body>
 </html>
 <script>
     function expressar(){
-        var repeticao = 
+        var repeticao = 0;
+        var texto = '';
+        var amor = input_qtdAmor.value;
+        var pessoa = input_pessoaAmada.value;
+
+        while (repeticao < amor ){
+            texto += pessoa + `, eu te amo! sempre lembre disso! <br>`;
+            
+            repeticao += 1;
+
+            span_texto.innerHTML = texto;
+        }
+
     }
 
 </script>

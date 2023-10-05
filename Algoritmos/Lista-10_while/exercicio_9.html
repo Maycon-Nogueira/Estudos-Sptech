@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    <span>Digite sua frase:</span>
+    <input id="input_frase">
+    <br>
+    <span> Digite um numero: </span>
+    <input id="input_qtd">
+    <br>
+    <button onclick="papagaiar()" >Papagaio</button><br>
+
+</body>
+</html>
+<script>
+    function papagaiar(){
+        var repeticao = 0
+        
+        var qtd_repeticao = input_qtd.value;
+
+        var frase = input_frase.value;
+
+        while (repeticao < qtd_repeticao ){
+            
+            alert(frase);
+            
+            repeticao += 1;
+
+        }
+    }
+
+</script>
