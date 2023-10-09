@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 12</title>
+</head>
+<body>
+    <span> Selecione qual tabuada você quer receber:</span>
+        <select id="multiplicador">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+    <br>
+    <span>Até qual número você quer a tabuada:</span>
+    <input id="input_ultimoNum">
+    <button onclick="tabuada()">Ver tabuada</button>
+    <div id="div_tabuada"></div>
+</body>
+</html>
+<script>
+    function tabuada(){
+        var texto = ``;
+        var selecionado = Number(multiplicador.value);
+        var ultimoNum = Number(input_ultimoNum.value)
+        var repeticao = 1
+
+        while (repeticao<=ultimoNum){
+            if(repeticao%2 == 0) {
+                texto += `<span style="color: blue;"> ${selecionado} x ${repeticao} = ${selecionado * repeticao}</span> <br>`  
+            }
+            else{
+                texto += `<span style="color: red;"> ${selecionado} x ${repeticao} = ${selecionado * repeticao}</span> <br>`
+            }
+            
+            repeticao += 1;
+        }
+        div_tabuada.innerHTML = texto;
+
+    }
+
+</script>

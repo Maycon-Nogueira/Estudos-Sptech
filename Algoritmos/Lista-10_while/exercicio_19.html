@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 18</title>
+</head>
+<body>
+    <span> Informe quantas xícaras de café com leite você já deve ter bebido: </span>
+    <input id="input_qtdxicaras">
+    <br>
+    <button onclick="informar()">Ver quantidade </button>
+    <br>
+    <span id="span_texto"></span>
+</body>
+</html>
+<script>
+    function informar(){
+        var xicaras = input_qtdxicaras.value
+        var texto = ``
+        // var repeticao = 0
+
+        // while(repeticao<xicaras){
+        texto += `${xicaras} colheres de leite e ${xicaras *2} de café `
+        
+        // repeticao += 1
+        // }
+        span_texto.innerHTML = texto;
+    }
+</script>

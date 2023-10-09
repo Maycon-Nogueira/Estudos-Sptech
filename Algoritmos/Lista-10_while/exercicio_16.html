@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 16</title>
+</head>
+<body>
+<span>Insira a quantidade de passageiros</span>
+<input id="input_qtdPassageiros">
+<br>
+<button onclick="carona()">#Partiu Carona</button>
+<br>
+<span id="span_passageiros"></span>
+</body>
+</html>
+<script>
+    function carona(){
+        var passageiros = input_qtdPassageiros.value;
+        var texto = ``;
+        var repeticao = 1;
+
+        while(repeticao<=passageiros){
+            if (repeticao == 1){
+                texto += `entrou o ${repeticao}º passageiro (que é o(a) motorista)<br>`
+            } else if(repeticao<=5) {
+                texto += `entrou o ${repeticao}º passageiro <br>`
+            } else {
+                texto += `O ${repeticao}º terá que esperar! <br>`
+            }
+            repeticao += 1;
+        }
+        span_passageiros.innerHTML = texto
+    }
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 14</title>
+</head>
+
+<body>
+    <span>Insira a sua idade: </span>
+    <input onkeyup="descrever()" id="input_idadeUsuario">
+    <br>
+    <span id="encaixar"></span>
+</body>
+
+</html>
+<script>
+    var input = document.querySelector('#input_idadeUsuario')
+
+    input.onkeyup = function descrever() {
+        var texto = ``
+        var idadeAtual = input.value
+        var idade = 0
+
+        while (idade <= idadeAtual) {
+            if (idade <= 4) {
+                texto += idade + ` anos (primeira Infância)<br>`
+            }
+            else if (idade <= 6) {
+                texto += idade + ` anos (pré-escolar)<br>`
+            }
+            else if (idade <= 10) {
+                texto += idade + ` anos (Segunda Infância)<br>`
+            }
+            else if (idade < 18) {
+                texto += idade + ` anos (Adolescência)<br>`
+            }
+            else if (idade <= 50) {
+                texto += idade + ` anos (Adulto)<br>`
+            }
+            else if (idade < 100) {
+                texto += idade + ` anos (Melhor Idade)<br>`
+            }
+            else if (idade >= 100) {
+                texto += idade + ` anos(Matusalém)<br>`
+            }
+
+            idade += 1
+        }
+        encaixar.innerHTML = texto
+
+
+    }
+
+</script>

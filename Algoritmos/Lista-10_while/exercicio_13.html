@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 13</title>
+</head>
+
+<body>
+    <span> A cada quantos dias você vai à academia? </span>
+    <input id="input_musculacao">
+    <br>
+    <button onclick="rotina()">exibir rotina mensal</button>
+    <br>
+    <span id="span_exibir"></span>
+</body>
+
+</html>
+<script>
+    function rotina() {
+        var texto = ``
+        var dia = 0
+        var numero = Number(input_musculacao.value)
+
+        while(dia<30){
+
+           if( dia%numero == 0){
+                texto += `Dia ${dia + 1} - musculação <br>`
+            }
+            else {
+                texto += `Dia ${dia + 1} - comer, dormir e etc... <br>`
+            }
+
+            dia += 1
+        }
+        span_exibir.innerHTML = texto
+    }
+
+
+</script>

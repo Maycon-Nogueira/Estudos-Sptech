@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 15</title>
+</head>
+
+<body>
+    <span>Quantos elefantes irão incomodar?</span>
+    <input id="input_elefante">
+    <br>
+    <button onclick="incomodar()">Atazanar o médium</button>
+    <br>
+    <span id="atazanar"></span>
+</body>
+
+</html>
+<script>
+    function incomodar() {
+        var qtd_elefantes = input_elefante.value;
+        var repeticao = 1;
+        var texto = ``
+        var incomodam = `incomodam, `
+
+        while (repeticao < qtd_elefantes) {
+            incomodam += `incomodam, `;
+
+            texto += `1 elefante incomoda muita gente!<br>`;
+
+            texto += `${repeticao + 1} elefantes ${incomodam} muitos mais! <br>`
+            repeticao += 1;
+        }
+        atazanar.innerHTML = texto;
+    }
+
+</script>

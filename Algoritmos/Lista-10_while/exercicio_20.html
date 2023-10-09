@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 20</title>
+</head>
+<body>
+    <span> Quantos depósitos foram feitos?</span>
+    <input id="input_qtdDepositos">
+    <br>
+    <span> E qual era o valor?</span>
+    <input id="input_valorDepositos">
+    <br>
+    <button onclick="render()">Acompanhar grana</button>
+    <br>
+    <span id="span_grana"></span>
+</body>
+</html>
+<script>
+    function render(){
+        var quantidade = input_qtdDepositos.value;
+        var valorDep = Number(input_valorDepositos.value);
+        var texto = ``;
+        var repeticao = 1;
+
+        while(repeticao<=quantidade){
+            texto += repeticao + `º Mês: R$ ${valorDep * repeticao} <br>`
+            
+            repeticao += 1;
+        }
+         span_grana.innerHTML = texto;
+    }
+</script>

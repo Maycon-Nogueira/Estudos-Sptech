@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span> Quantas voltas o carro dará?</span>
+    <input id="input_voltas">
+    <br>
+    <button onclick="corrida()">Iniciar corrida!</button>
+    <br>
+    <span id="span_voltas"></span>
+</body>
+</html>
+<script>
+    function corrida(){
+        var voltas = input_voltas.value;
+        var repeticao = 1;
+        var texto = ``;
+        
+        while (repeticao<=voltas){
+            texto += `Carro dando a ${repeticao}ª volta <br>`
+            repeticao += 1
+            
+        }
+    span_voltas.innerHTML = texto + `<br> Corrida finalizada`
+    }
+
+</script>

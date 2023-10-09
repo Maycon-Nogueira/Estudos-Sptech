@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 18</title>
+</head>
+<body>
+    <span> Informe quantas Coca-cola você já deve ter bebido: </span>
+    <input id="input_qtdCocas">
+    <br>
+    <button onclick="informar()">Ver quantidade </button>
+    <br>
+    <span id="span_texto"></span>
+</body>
+</html>
+<script>
+    function informar(){
+        var cocas = input_qtdCocas.value
+        var texto = ``
+        var repeticao = 0
+
+        while(repeticao<cocas){
+        texto += `Garrafinha  `
+        
+        repeticao += 1
+        }
+        span_texto.innerHTML = texto;
+    }
+</script>
