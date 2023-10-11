@@ -9,7 +9,7 @@ body{
 }
 
 .header{
-    background: #3F949C;
+    background: #0A5C6C;
     border: #F1FAFF;
     font-family: 'glacial';
     
@@ -29,15 +29,18 @@ body{
 }
 
 .div_esquerda{
+    width: 546.4px;
     grid-column: 1;
     display: flex;
-    justify-content: center;
+    justify-content: center ;
     align-items: center;
 }
 
- .item_esquerda{
-    margin-left: 25px;
-    margin-right: 5px;
+ .item_esquerdaEsquerda{
+    
+}
+.item_esquerdaDireita{
+    
 }
 
 .div_centro{
@@ -48,6 +51,7 @@ body{
 }
 
 .div_direita{
+    width: 546.4px;
     grid-column: 3;
     display: flex;
     justify-content: center;
@@ -63,8 +67,6 @@ body{
     width: 140px;
     order:2;
 }
-
-
 
 .div_home {
     

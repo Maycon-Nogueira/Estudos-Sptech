@@ -140,12 +140,12 @@ use PraticaFuncionario;
 
 create table setor(
 idSetor int primary key auto_increment,
-nomeSetor varchar (45),
+nomeSetor varchar(45),
 andarSetor int);
 
 create table funcionario (
 idFuncionario int primary key auto_increment,
-nomeFuncionario varchar (45),
+nomeFuncionario varchar(45),
 TelFuncionario char(11),
 Salario int,
 fkSetor int,
@@ -154,7 +154,7 @@ constraint salario check (salario>0)) auto_increment = 50;
 
 create table acompanhante ( 
 idAcomp int primary key auto_increment,
-nomeAcomp varchar (45),
+nomeAcomp varchar(45),
 relacao varchar(30),
 nascAcomp date,
 fkFunc int) auto_increment = 100;
@@ -192,21 +192,37 @@ references Setor(idSetor);
 alter table Acompanhante add constraint fkfuncAcomp foreign key Acompanhante(fkFunc)
 references Funcionario(idFuncionario);
 
-select * from setor join Funcionario
+select `s`.`nomeSetor`, `s`.`andarSetor`,
+`f`.`nomeFuncionario`, `f`.`TelFuncionario`, `f`.`Salario`
+from setor as s
+join Funcionario as f
 on fkSetor = idSetor;
 
-select * from setor join Funcionario
+select `s`.`nomeSetor`, `s`.`andarSetor`,
+`f`.`nomeFuncionario`, `f`.`TelFuncionario`, `f`.`Salario`
+from setor as s
+join Funcionario as f
 on fkSetor = idSetor 
 where nomeSetor = 'Financeiro';
 
-select * from funcionario join acompanhante
+select `f`.`nomeFuncionario`, `f`.`TelFuncionario`, `f`.`Salario`,
+`a`.`nomeAcomp`, `a`.`relacao`, `a`.`nascAcomp`
+from funcionario as f
+join acompanhante as a
 on fkFunc = idFuncionario;
 
-select * from funcionario join acompanhante
+select `f`.`nomeFuncionario`, `f`.`TelFuncionario`, `f`.`Salario`,
+`a`.`nomeAcomp`, `a`.`relacao`, `a`.`nascAcomp`
+from funcionario  as f
+join acompanhante as a
 on fkFunc = idFuncionario 
 where nomeFuncionario = 'Mary Kley';
 
-select * from Setor as S join funcionario as f
+select `s`.`nomeSetor`, `s`.`andarSetor`,
+`f`.`nomeFuncionario`, `f`.`TelFuncionario`, `f`.`Salario`,
+`a`.`nomeAcomp`, `a`.`relacao`, `a`.`nascAcomp` 
+from Setor as S 
+join funcionario as f
 on f.FkSetor = S.idSetor
 join acompanhante as a
 on a.fkFunc = f.idFuncionario;
@@ -349,4 +365,8 @@ references pet(idPet);
 UPDATE `petshop`.`pet` SET `fkfilhote` = '101' WHERE (`idPet` = '102');
 UPDATE `petshop`.`pet` SET `fkfilhote` = '107' WHERE (`idPet` = '108');
 
-Select * from pet as filhote join pet as pais on filhote.fkfilhote = pais.idpet;
+Select `pais`.`nomePet`, `pais`.`tipoPet`, `pais`.`racaPet`,`pais`. `nascPet`,
+ `filhote`.`nomePet`, `filhote`.`tipoPet`, `filhote`.`racaPet`, `filhote`.`nascPet`
+from pet as pais
+join pet as filhote 
+on filhote.fkfilhote = pais.idpet;

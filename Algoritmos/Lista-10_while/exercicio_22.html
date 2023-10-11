@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 21</title>
+</head>
+
+<body>
+    <span> Quantos depósitos foram feitos?</span>
+    <input id="input_qtdDepositos">
+    <br>
+    <span> E qual era o valor?</span>
+    <input id="input_valorDepositos">
+    <br>
+    <button onclick="render()">Acompanhar grana</button>
+    <br>
+    <span id="span_grana"> </span>
+</body>
+
+</html>
+<script>
+    function render() {
+        var quantidade = input_qtdDepositos.value;
+        var valorDep = Number(input_valorDepositos.value);
+        var texto = ``;
+        var mes = 1;
+        var deposito = 0;
+
+        while (mes <= quantidade) {
+
+            deposito += valorDep  
+
+            if (mes%3 == 0) {
+                deposito *= 1.01;
+                texto += `<img src="https://img.freepik.com/vetores-premium/icone-de-estrela-3d-ouro_1102-2203.jpg?w=740" width="20px">`;
+            }
+
+            texto += mes + `º Mês: R$ ${deposito} <br>`
+
+            mes += 1;
+        }
+        span_grana.innerHTML = texto;
+    }
+</script>

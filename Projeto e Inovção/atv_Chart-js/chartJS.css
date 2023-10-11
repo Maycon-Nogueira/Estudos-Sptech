@@ -1,0 +1,43 @@
+@font-face{
+    font-family: 'Alice' ;
+    src: url("fonte/Alice-Regular.ttf") format(opentype);
+    font-weight: bolder;
+}
+
+*{font-family: 'Alice';
+
+}
+body{
+    border: 0;
+    padding: 0;
+}
+.titulos{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+ .graficos{
+    display: flex;
+    height:70vh;
+    width:100vw;
+    align-items: center;
+    justify-content: space-around;
+ }
+ 
+ .line_chart{
+    background-color: rgb(244, 255, 148);
+    height:50vh;
+    width:40vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }
+ .bar_chart{
+    background-color: rgb(164, 221, 221);
+    height:50vh;
+    width:40vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }

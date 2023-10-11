@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 23</title>
+</head>
+
+<body>
+    <span> Numero à iniciar: </span>
+    <input onkeyup="verificarInicial()" id="input_numeroInicial">
+    <span> Numero à finalizar: </span>
+    <input id="input_numeroFinal">
+    <br>
+    <span>Divisor</span>
+    <select id="divisor">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button onclick="informacao">Contar</button>
+    <span id="alerta"></span>
+    <span id="resultado"></span>
+</body>
+
+</html>
+<script>
+    var verificacao = document.querySelector('#input_numeroInicial');
+
+verificacao.onkeyup = 
+    function verificarInicial() {
+        var verificacaoinicial = input_numeroInicial.value
+
+        if (verificacaoinicial < 1) {
+            alerta.innerHTML = `O número informado é muito baixo`
+        } else {
+        alerta.innerHTML = ``}
+        
+    }
+
+</script>
