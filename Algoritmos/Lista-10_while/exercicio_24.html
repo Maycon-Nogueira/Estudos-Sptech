@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 24</title>
+</head>
+<body>
+    <span>Insira um número entre 0 e 100</span>
+    <input id="input_dividendo">
+    <button onclick="dividir()">Ver divisores</button>
+    <div id="div_divisores"></div>
+</body>
+</html>
+<script>
+    function dividir(){
+        var dividendo = Number(input_dividendo.value);
+        var divisor = 1;
+        var texto = ``;
+
+        while(divisor<=dividendo){
+            if(dividendo%divisor == 0){
+                texto += divisor + `<br>`
+            }
+
+            divisor += 1;
+        }
+        div_divisores.innerHTML = texto
+    }
+</script>

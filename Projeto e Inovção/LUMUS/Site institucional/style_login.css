@@ -1,0 +1,144 @@
+/* Fonte da navbar  */
+@font-face{
+    font-family: 'glacial' ;
+    src: url("public/assets/glacial-indifference/GlacialIndifference-Regular.otf") format(opentype);
+    font-weight: normal;
+}
+
+/* Ajustes gerais */
+body{
+    font-family: 'glacial';
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background: #0A5C6C;
+    font-family: 'glacial';
+    
+}
+
+.header .container{
+    width: 80%;
+    margin: auto;
+}
+
+/* Formatação da navbar para alinhar os itens */
+.header .navbar{
+    display: grid;
+    grid-template-columns: 1 1 1;
+    color: #F1FAFF;
+}
+
+.div_esquerda{
+    width: 546.4px;
+    grid-column: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 25px;
+}
+
+
+.div_centro{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_direita{
+    width: 546.4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-column: 3;
+}
+
+/* Logo Lumus: */
+.header img{   
+    width: 140px;   
+}
+
+/* Apenas cor */
+.div_home {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #3F949C;
+    height: 750px;
+}
+
+
+.container .card {
+    display: flex;
+    align-items: center;
+
+}
+.card_login {
+    width: 360px;
+    height: 330px;
+    background-color: #0A5C6C;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: #5c5c5c;
+}
+.campo span{
+    color: white;
+    align-items: right;
+    padding: 3%;
+    
+
+}
+.campo input{
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    padding:  0% 5%;
+    font-style: italic;
+} 
+
+.formulario h1{
+    display: flex;
+    align-items: center;
+    color: #f0ca05;
+}
+.botao {
+    cursor: pointer;
+    align-items: center;
+    border: 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #3F949C;
+    width: 100px;
+    height: 30px;
+    
+}
+.imagem_login img {
+    height: 500px;
+    width: 500px;
+}
+.imagem_login{
+    display: flex;
+}
+
+.card_cadastro {
+    width: 360px;
+    height: 700px;
+    background-color: #0A5C6C;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: #5c5c5c;
+}

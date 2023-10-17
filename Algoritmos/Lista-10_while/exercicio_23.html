@@ -11,10 +11,10 @@
     <span> Numero à iniciar: </span>
     <input onkeyup="verificarInicial()" id="input_numeroInicial">
     <span> Numero à finalizar: </span>
-    <input id="input_numeroFinal">
+    <input onkeyup="verificarFinal()" id="input_numeroFinal">
     <br>
     <span>Divisor</span>
-    <select id="divisor">
+    <select id="select_divisor">
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
@@ -24,24 +24,105 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-    <button onclick="informacao">Contar</button>
+    <button onclick="informacao()">Contar</button>
     <span id="alerta"></span>
-    <span id="resultado"></span>
+    <div id="resultado"></div>
+    <div id="div_info">
+        </div>
 </body>
 
 </html>
 <script>
-    var verificacao = document.querySelector('#input_numeroInicial');
+    var verificacaoIni = document.querySelector('#input_numeroInicial');
 
-verificacao.onkeyup = 
-    function verificarInicial() {
-        var verificacaoinicial = input_numeroInicial.value
+    var verificacaoFim = document.querySelector('#input_numeroFinal');
 
-        if (verificacaoinicial < 1) {
-            alerta.innerHTML = `O número informado é muito baixo`
-        } else {
-        alerta.innerHTML = ``}
-        
+    verificacaoIni.onkeyup =
+        function verificarInicial() {
+            var verificacaoInicial = Number( input_numeroInicial.value);
+
+            var verificacaoFinal = Number( input_numeroFinal.value);
+
+            if (verificacaoInicial < 1) {
+                alerta.innerHTML = `O número informado é muito baixo`
+            } else {
+                alerta.innerHTML = ``
+            }
+        }
+
+    verificacaoFim.onkeyup =
+        function verificarFinal() {
+            var verificacaoInicial = Number( input_numeroInicial.value);
+
+            var verificacaoFinal = Number( input_numeroFinal.value);
+
+            if (verificacaoInicial > verificacaoFinal) {
+                alerta.innerHTML = `O número final informado é muito baixo`
+            } else if (verificacaoFinal > 100) {
+                alerta.innerHTML = `O número informado é muito alto`
+            } else {
+                alerta.innerHTML = ``;
+            }
+        }
+
+    function informacao() {
+        var numInicial = Number(input_numeroInicial.value);
+        var numFinal = Number(input_numeroFinal.value);
+        var divisor = select_divisor.value;
+        var numero = numInicial;
+        var texto_divisiveis = ``;
+        var info_numeros = ``;
+        var qtdTotal = 0;
+        var somaDivisiveis = 0;
+        var mediaDivisiveis = 0;
+        var maiorDivisivel = 0;
+        var menordivisivel = 0;
+
+
+
+        if (numInicial >= 1 && numFinal <= 100) {
+            while (numero <= numFinal) {
+                if (numero % divisor == 0) {
+                    texto_divisiveis += numero + `, `
+                    
+                    qtdTotal += 1;
+                    
+                    somaDivisiveis += numero;
+
+                    maiorDivisivel = numero
+                   
+                } 
+                
+                mediaDivisiveis = somaDivisiveis / qtdTotal
+
+                menordivisivel = maiorDivisivel /  (qtdTotal * divisor)
+
+                numero += 1  
+            }
+
+            resultado.innerHTML = texto_divisiveis;
+
+          
+            while (numInicial%divisor !=0){
+                numInicial += 1
+                menordivisivel = numInicial
+            }
+
+
+            info_numeros = ` QUANTIDADE TOTAL DE DIVISIVEIS EXIBIDOS: ${qtdTotal}. <br>
+
+                SOMATÓRIO DOS DIVISIVEIS EXIBIDOS: ${somaDivisiveis}. <br>
+
+                MÉDIA DOS DIVISIVEIS EXIBIDOS: ${mediaDivisiveis}. <br> 
+
+                MAIOR DIVISIVEL EXIBIDO: ${maiorDivisivel}. <br>
+
+                MENOR DIVISIVEL EXIBIDO:${menordivisivel}.`
+
+            
+            div_info.innerHTML = info_numeros;
+
+        }
     }
 
 </script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Donald's</title>
+</head>
+
+<body>
+
+    <span> Está chovendo?</span>
+    <input placeholder="Sim ou Não" id="input_chuva">
+    <br>
+    <span> Tenho dinheiro?</span>
+    <input placeholder="Sim ou Não" id="input_dinheiro">
+    <br>
+    <span> Tenho tempo?</span>
+    <input placeholder="Sim ou Não" id="input_tempo">
+    <br>
+    <span>Gosto de nugetts?</span>
+    <input placeholder="Sim ou Não" id="input_nuggets">
+    <button onclick="comerMC()"> Devo ir ao McDonnald's</button>
+    <div id="div_resposta"></div>
+
+</body>
+
+</html>
+<script>
+    function comerMC() {
+        var chuva = input_chuva.value.toLowerCase().replace(`ã`,`a`);
+        var dinheiro = input_dinheiro.value.toLowerCase().replace(`ã`,`a`);
+        var tempo = input_tempo.value.toLowerCase().replace(`ã`,`a`);
+        var nuggets = input_nuggets.value.toLowerCase().replace(`ã`,`a`);
+        var resposta = `Vamos ao Mc 😁🍔`
+
+        if (chuva == `nao` && dinheiro == `nao` && tempo == `sim` && nuggets == `nao`) {
+            div_resposta.innerHTML = resposta
+        }
+        else if (chuva == `nao` && dinheiro == `nao` && tempo == `sim` && nuggets == `sim`) {
+            div_resposta.innerHTML = resposta
+        }
+        else if (chuva == `nao` && dinheiro == `sim` && tempo == `sim` && nuggets == `sim`) {
+            div_resposta.innerHTML = resposta
+        }
+        else if (chuva == `sim` && dinheiro == `nao` && tempo == `sim` && nuggets == `sim`) {
+            div_resposta.innerHTML = resposta
+        }
+        else if (chuva == `sim` && dinheiro == `sim` && tempo == `sim` && nuggets == `sim`) {
+            div_resposta.innerHTML = resposta
+        }
+        else {
+            resposta = `Sem Mc donald's hoje 😥`
+            div_resposta.innerHTML = resposta
+        }
+
+
+
+
+    }
+</script>
