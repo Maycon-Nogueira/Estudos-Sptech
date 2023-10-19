@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercicio 24</title>
+    <title>exercicio 25</title>
 </head>
 <body>
     <span>Insira um número entre 0 e 100</span>
@@ -18,13 +18,24 @@
         var divisor = 1;
         var texto = ``;
 
+        if(dividendo>0 && dividendo<100){
         while(divisor<=dividendo){
             if(dividendo%divisor == 0){
                 texto += divisor + `<br>`
             }
 
+
             divisor += 1;
         }
+            if(dividendo>1 && dividendo == 2 || dividendo == 3 || dividendo == 5 || dividendo == 7 || dividendo == 11 || dividendo == 13){
+                texto += `<br> ${dividendo} é um número primo`
+            }else if(dividendo%2 != 0 && dividendo%3 !=0 && dividendo%5 != 0 && dividendo%7 != 0 && dividendo%11 != 0 && dividendo%13 != 0){
+                texto += `<br> ${dividendo} é um número primo`
+            }
+        } else {
+             texto = `O número informado é invalido`
+        }
+
         div_divisores.innerHTML = texto
     }
 </script>

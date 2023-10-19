@@ -22,18 +22,21 @@
         var texto_primo = ``;
         var texto = ``;
 
-        while (divisor <= dividendo) {
-            if (dividendo % divisor == 0) {
-                texto += `${divisor} <br>`
+        if (dividendo > 0 && dividendo < 100) {
+            while (divisor <= dividendo) {
+                if (dividendo % divisor == 0) {
+                    texto += `${divisor} <br>`
+                    texto_primo += `p`;
+                }
+                divisor += 1;
             }
-            if (texto == `1 <br>${divisor} <br>`) {
-             texto_primo+= `<br> O número ${dividendo} é um número primo`
-        }
-            divisor += 1;
-
-        }
-        
-        div_divisores.innerHTML = texto + texto_primo
-        
+            if (texto_primo == `pp`) {
+                texto += `<br> O número ${dividendo} é um número primo`
+            }
+        } else {
+             texto = `O número informado é invalido` 
+            }
+        div_divisores.innerHTML = texto;
+ 
     }
 </script>

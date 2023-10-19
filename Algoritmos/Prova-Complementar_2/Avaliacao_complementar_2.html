@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Complementar</title>
+</head>
+
+<body>
+    <span>Quantidade de chakra: </span>
+    <input id="input_chakra">
+    <br>
+    <span>Quantidade de clones desejada: </span>
+    <input id="input_qtdClones">
+    <br>
+    <span>Quantidade de clones por linha: </span>
+    <input id="input_clonesLinha">
+    <br>
+    <button onclick="clonar()">Criar clones</button>
+    <div id="div_clones"> </div>
+</body>
+
+</html>
+<script>
+    function clonar() {
+        var chakra = Number(input_chakra.value);
+        var qtdClones = Number(input_qtdClones.value);
+        var clonesLinha = input_clonesLinha.value;
+        var clonesFeitos = 1;
+        var imagens = ``;
+        var analise = ``;
+        var chakraRestante = chakra - (qtdClones * 20);
+        var resultado = ``;
+
+        if (chakra < 20 || chakra > 5000) {
+            alert(`ERRO NA ENTRADA DE DADOS – Chakra tem que ser entre 20 e 5.000.`)
+
+        } else if (qtdClones < 0 || qtdClones > 250) {
+            alert(`ERRO NA ENTRADA DE DADOS – Quantidade de Clones tem que ser entre 0 e 250.`)
+
+        } else if (clonesLinha <= 0) {
+            alert(`ERRO NA ENTRADA DE DADOS – Quantidade de Clones por linha tem que ser maior que 0`)
+
+        } else if (chakra < (qtdClones * 20)) {
+            alert(`O naruto não tem chakra o suficiente para esta quantidade de clones`)
+
+        } else {
+
+            while (clonesFeitos <= qtdClones) {
+                imagens += `<img src="naruto.png" alt="imagem do naruto" width="100px">`
+
+                if (clonesFeitos % clonesLinha == 0) {
+                    imagens += `<br>`
+                }
+                clonesFeitos += 1;
+            };
+
+            if (chakraRestante > 1000 || qtdClones > 50 && chakraRestante >= 0.2 * chakra) {
+                resultado = `PROVAVELMENTE VOCÊ VAI GANHAR`
+            } else if (chakra > 500 || qtdClones > 20 && qtdClones < 50 && chakraRestante >= 0.1 * chakra) {
+                resultado = `A LUTA VAI SER MUITO BOA`
+            } else {
+                resultado = `TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`
+            };
+
+
+            analise = `<br> ANÁLISE DA GERAÇÃO DE CLONES <br>
+
+                    Chakra Inicial: ${chakra}  <br>
+
+                    Quantidade de Clones: ${qtdClones} <br>
+
+                    Sobra de Chakra: ${chakraRestante} <br>` + resultado;
+        }
+        div_clones.innerHTML = imagens + analise;
+    }
+
+</script>

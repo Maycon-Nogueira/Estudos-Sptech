@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 26</title>
+</head>
+<body>
+    <span>Insira um número entre 10 e 500:</span>
+    <input id="input_numero">
+    <button onclick="somar()">Somar pares</button>
+    <div id="div_pares"></div>
+</body>
+</html>
+<script>
+    function somar(){
+        var numero = input_numero.value;
+        var pares = 2;
+        var texto = ``;
+        var soma_pares = 0
+
+        while (pares<=numero){
+            texto += pares + `<br>`
+            soma_pares = soma_pares + pares;
+            pares += 2;
+            
+        }
+        texto += `<br> Soma dos pares: ` + soma_pares;
+        div_pares.innerHTML = texto;
+
+    }
+</script>
