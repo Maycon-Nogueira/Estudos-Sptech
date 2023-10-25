@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços de repetição</title>
+</head>
+
+<body>
+    <span>Insira a quantidade de águas engarrafadas: </span>
+    <input id="input_aguaEngarrafada">
+    <br>
+    <span> Insira a quantidade de Cocos fechados: </span>
+    <input id="input_cocosFechados">
+    <br>
+    <button onclick="abrirQuiosque()">Abrir o quiosque</button>
+    <br>
+    <div>
+        <h2> Estoque inicial</h2>
+
+        <span> Aguas engarrafadas: <b id="qtd_garrafas">0</b> </span>
+        <span> Cocos Fechados: <b id="qtd_cocos">0</b> </span>
+    </div>
+    <div>
+        <h2> Registro de operações de vendas</h2>
+
+        <span>Insira a quantidade vendida </span>
+        <input id="input_qtdVendida">
+        <select id="select_produtoVendido">
+            <option value="vendasGarrafas">Água engarrafada </option>
+            <option value="vendasCocos">Coco fechado</option>
+        </select>
+        <button onclick="registroVenda()">Registrar a venda</button>
+        
+        <div id="div_registroVenda"></div>
+    </div>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function abrirQuiosque() {
+        var garrafas = input_aguaEngarrafada.value;
+        var cocos = input_cocosFechados.value;
+        var texto = ``;
+        var qtdVendida = input_qtdVendida.value;
+        var produtoVendido = select_produtoVendido.value;
+        var garrafasRestantes = garrafas;
+        var cocosRestantes = cocos;
+
+
+
+        if (garrafas < 100) {
+            alert(`Com essa quantidade de Água engarrafada não dá para abrir o quiosque`);
+        }
+        else if (cocos < 200) {
+            alert(`Com essa quantidade de Coco fechado não dá para abrir o quiosque `);
+        }
+        else {
+            if (garrafas <= 1000) {
+                texto = `Engarrafe mais água de coco `
+                alert(texto);
+            }
+
+            if (cocos <= 2000) {
+                texto += `Compre mais cocos`
+                alert(texto);
+            }
+
+            qtd_garrafas.innerHTML = garrafas
+            qtd_cocos.innerHTML = cocos
+
+           function registroVenda(){
+
+            if(produtoVendido == cocosRestantes)
+
+                div_registroVenda.innerHTML += `com a venda de ${qtdVendida} de ${produtoVendido} o saldo no estoque é ${cocosRestantes}`
+
+
+            }
+        }
+        div_mensagem.innerHTML = texto;
+    }
+
+</script>

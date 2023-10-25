@@ -19,14 +19,18 @@
         var texto = ``;
         var soma_pares = 0
 
+        if(numero > 10 && numero < 500){
         while (pares<=numero){
             texto += pares + `<br>`
-            soma_pares = soma_pares + pares;
+            soma_pares += pares;
             pares += 2;
             
         }
         texto += `<br> Soma dos pares: ` + soma_pares;
-        div_pares.innerHTML = texto;
+        div_pares.innerHTML = texto;}
+        else{
+            alert(`numero incorreto`)
+        }
 
     }
 </script>
