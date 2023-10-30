@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>  
+    <span>Digite o item que deseja pesquisar: </span>
+    <input id="input_pesquisa">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_resultadoPesquisa"></div>
+</body>
+</html>
+<script>
+
+    var lista = [];
+
+    function pesquisar(){
+        var itemPesquisado = input_pesquisa.value;
+        var pesquisa = `Não existe a fruta ${itemPesquisado} na lista`;
+
+       lista.push(`banana maca`, `maracuja`, `limao`, `laranja`, `pinha`, `jaca`, `kiwi`, `banana`, `melao`, `melancia`);
+
+        
+
+       if(lista.indexOf(itemPesquisado.toLowerCase())>0){
+        pesquisa = `a fruta ${itemPesquisado} existe na lista`
+       };
+        
+        div_resultadoPesquisa.innerHTML = pesquisa;
+    }
+
+</script>

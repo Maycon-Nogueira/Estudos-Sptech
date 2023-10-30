@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+
+<body>
+    <span>Destino de viagem: </span>
+    <input id="input_destinoViagem">
+    <br></br>
+    <button onclick="adicionar()">Adicionar</button>
+    <br>
+    <button onclick="primeiraViagem()">Primeira viagem</button>
+    <button onclick="terceiraViagem()">Terceira viagem</button>
+    <button onclick="ultimaViagem()">Última viagem</button>
+    <br>
+    <div id="div_exibirViagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var destinos = [];
+    var informacao = ``;
+
+    function adicionar() {
+        var local = input_destinoViagem.value;
+
+        destinos.push(local);
+    }
+
+    function primeiraViagem() {
+        if (destinos[0] == undefined) {
+            informacao = `Você ainda não viajou`;
+        } else {
+            informacao = `Sua primeira viagem foi para ${destinos[0]}`;
+        }
+
+        div_exibirViagem.innerHTML = informacao;
+    }
+
+    function terceiraViagem() { 
+        if (destinos[2] == undefined) {
+            informacao = `Você ainda não fez três viagens`;
+        } else {
+            informacao = `Sua terceira viagem foi para ${destinos[2]}`;
+        }
+
+        div_exibirViagem.innerHTML = informacao;
+    }
+
+    function ultimaViagem() { 
+    if(destinos[destinos.length-1] == undefined) {
+        informacao = `Você ainda não fez viagens`;
+        } else {
+            informacao = `Sua última viagem foi para ${destinos[destinos.length-1]}`;
+    }
+
+    div_exibirViagem.innerHTML = informacao;
+    }
+
+
+</script>

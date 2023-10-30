@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    <span>Insira os bairros que já residiu:</span>
+    <input id="input_bairros">
+    <br>
+    <button onclick="cadastrarBairro()">Cadastrar bairro</button>
+    <br>
+    <span> Digite qual a residência você gostaria de relembrar: </span>
+    <input type="number" id="input_relembrar" placeholder="3">
+    <br>
+    <button onclick="relembrar()">Relembrar moradia</button>
+    <div id="div_memoria"></div>
+</body>
+</html>
+<script>
+
+    var bairrosMorados = []
+
+    function cadastrarBairro(){
+       var  bairros = input_bairros.value;
+        
+        bairrosMorados.push(bairros);
+
+    }
+
+    function relembrar(){
+        var relembrar = Number(input_relembrar.value);
+        var mostrarBairros = `O ${relembrar}º bairro que você morou foi o ${bairrosMorados[relembrar - 1]}`;
+        
+        if(bairrosMorados[relembrar -1] ==undefined ){
+            mostrarBairros = `Você ainda não morou no ${relembrar}º bairro.`;
+        }
+
+        div_memoria.innerHTML = mostrarBairros;
+    }
+</script>

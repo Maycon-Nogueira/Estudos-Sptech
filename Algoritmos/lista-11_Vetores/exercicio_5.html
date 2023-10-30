@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 5</title>
+</head>
+
+<body>
+    <span>Insira seus filmes favoritos: </span>
+    <input id="input_filmes">
+    <br>
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <div id="div_exibirFavs"></div>
+</body>
+
+</html>
+
+<script>
+    var filmesFavs = [];
+
+    function cadastrar() {
+        var filme = input_filmes.value;
+        
+        filmesFavs.push(filme);
+
+        var lista = ``;
+
+        var terceiroFav = filmesFavs[2]
+
+        var analise = ``; 
+
+        
+
+        for(var posicao = 0; posicao<filmesFavs.length; posicao++ ){
+            lista += filmesFavs[posicao] + `<br>`;
+        };
+
+        if(terceiroFav == undefined){
+            terceiroFav = `Ainda não existe`
+        }
+
+        analise = `<br> Seu filme favorito é: ${filmesFavs[0]}
+        <br> Seu 3º filme favorito: ${terceiroFav}
+        <br> Total de filmes cadastrados: <strong>${filmesFavs.length}<\strong>.`
+
+        div_exibirFavs.innerHTML = lista + analise;
+    
+    }; 
+</script>
