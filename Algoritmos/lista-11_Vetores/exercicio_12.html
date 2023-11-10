@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 12</title>
+</head>
+
+<body>
+    <span>Insira o nome de seu filho</span>
+    <input id="input_filho">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Família</button>
+    <div id="div_filhosCadastrados"></div>
+    <br>
+    <div id="div_mostraFamilia"></div>
+</body>
+
+</html>
+<script>
+
+    var filhos = [];
+    var qtdFilhosCadastrados = 0;
+
+    function cadastrar() {
+        var nomeFilho = input_filho.value;
+        var textoResposta = ``;
+        qtdFilhosCadastrados = filhos.length;
+
+        for (
+            var posicao = 0;
+            posicao <= qtdFilhosCadastrados;
+            posicao++) {
+            if (filhos.indexOf(nomeFilho) < 0) {
+                filhos.push(nomeFilho);
+                textoResposta = `Filho cadastrado`;
+                break;
+            } else {
+                textoResposta = `Não é permitido filhos com o mesmo nome!`;
+            }
+        }
+        div_filhosCadastrados.innerHTML = textoResposta;
+    };
+
+    function atualizar() {
+        div_filhosCadastrados.innerHTML = ``;
+        var qtdFilhos = Number(filhos.length);
+
+        var textoFamilia = `Você tem ${qtdFilhos} filhos<br><br>
+        Seu custo mensal será aproximadamente R$${qtdFilhos * 3000} se colocá-los em escola particular ou R$${qtdFilhos * 1500} se eles estudarem em escola pública `;
+
+        div_mostraFamilia.innerHTML = textoFamilia;
+    }
+</script>

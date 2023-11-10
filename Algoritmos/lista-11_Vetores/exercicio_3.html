@@ -33,7 +33,7 @@
         var relembrar = Number(input_relembrar.value);
         var mostrarBairros = `O ${relembrar}º bairro que você morou foi o ${bairrosMorados[relembrar - 1]}`;
         
-        if(bairrosMorados[relembrar -1] ==undefined ){
+        if(bairrosMorados[relembrar -1] == 0 ){
             mostrarBairros = `Você ainda não morou no ${relembrar}º bairro.`;
         }
 

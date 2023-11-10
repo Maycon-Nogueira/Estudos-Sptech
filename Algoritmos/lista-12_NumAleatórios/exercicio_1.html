@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <button onclick="gerar()">Sortear</button>
+    <div id="div_numero"></div>
+    
+</body>
+</html>
+<script>
+    function gerar(){
+        var numAleatorio = Math.random();
+        var expor = numAleatorio.toFixed(3) + `<br>`;
+
+        if (numAleatorio>0.5){
+            expor += `Eu arredondaria para 1`
+        } else {
+            expor += `Eu arredondaria para 0`
+        }
+
+        div_numero.innerHTML = expor;
+    };
+
+</script>

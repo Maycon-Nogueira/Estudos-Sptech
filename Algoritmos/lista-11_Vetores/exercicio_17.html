@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 17</title>
+</head>
+
+<body>
+    <h1>Análise de performance</h1>
+    <h2>Registro</h2>
+    <br>
+    <span> Entre com o nome do aluno: </span>
+    <input id="input_nomeAluno">
+    <br>
+    <span>Entre com a nota do aluno: </span>
+    <input id="input_notaAluno">
+    <br>
+    <button onclick="registrarAluno()">Registrar</button>
+
+    <div id="div_mural"></div>
+    <br>
+    <h2>Pesquisa</h2>
+    <span>Entre com o intervalo de notas:</span>
+    <input placeholder="de" id="input_inicio">
+    <input placeholder="até" id="input_final"></input>
+    <button onclick="pesquisar()"> Analisar </button>
+
+
+
+</body>
+
+</html>
+<script>
+
+    var listaAlunos = [];
+    var notasAlunos = [];
+
+    function registrarAluno() {
+        var aluno = input_nomeAluno.value;
+        var nota = Number(input_notaAluno.value);
+        var exibicao = ``;
+
+
+        if (aluno == "") {
+            alert(`O nome tem que estar Preenchido`)
+        } else if (nota < 0 || nota > 10) {
+            alert(`A nota tem que estar entre 0 e 10`)
+        } else {
+            listaAlunos.push(aluno);
+            notasAlunos.push(nota);
+            for (
+                var numeroAluno = listaAlunos.length - 1;
+                numeroAluno >= 0;
+                numeroAluno--
+            ) {
+                exibicao += `<br> Aluno: ${listaAlunos[numeroAluno]}<br> nota: ${notasAlunos[numeroAluno]}`
+
+            };
+
+            div_mural.innerHTML = exibicao
+        };
+
+    };
+    function pesquisar() {
+        var inicio = input_inicio.value;
+        var fim = input_final.value;
+        var alunoPesquisado = ``;
+        var analise = ``;
+        var alunosListados = 0;
+        var maiorNota = notasAlunos[0];
+        var menorNota = notasAlunos[0];
+        var mediaNota = 0;
+
+        if (inicio < 0 || inicio > 10 || fim < 0 || fim > 10) {
+            alert(`A pesquisa tem de estar entre 0 e 10`)
+        } else if (fim < inicio) {
+            alert(`A nota final da pesquisa tem de ser maior que a inicial`)
+        } else {
+            for (
+                var contagem = 0;
+                contagem < listaAlunos.length;
+                contagem++
+            ) {
+                if (notasAlunos[contagem] >= inicio && notasAlunos[contagem] <= fim) {
+                    alunosListados++
+                    alunoPesquisado += `O aluno ${listaAlunos[contagem]} ficou com nota ${notasAlunos[contagem]}  <br>`;
+                };
+                if (notasAlunos[contagem] > maiorNota) {
+                    maiorNota = notasAlunos[contagem]
+                };
+                if (notasAlunos[contagem] < menorNota) {
+                    menorNota = notasAlunos[contagem]
+                };
+                mediaNota += notasAlunos[contagem]
+            }
+            mediaNota /= listaAlunos.length;
+
+            analise = `<br>Total de alunos registrados: ${listaAlunos.length} <br>
+             Total de alunos listado: ${alunosListados} <br>
+              Maior Nota: ${maiorNota} <br>
+               Menor Nota: ${menorNota} <br>
+                Média da Nota: ${mediaNota.toFixed(2)} `;
+
+            div_mural.innerHTML = alunoPesquisado + analise;
+        }
+
+    };
+
+
+</script>

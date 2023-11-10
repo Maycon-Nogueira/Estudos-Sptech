@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <style>
+        #div_paiDeImagens img{
+            height: 150px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="gerar()"> Sortear time</button>
+    <div id="div_paiDeImagens"></div>
+</body>
+</html>
+<script>
+    function gerar(){
+        var imagem = [
+        'https://logodetimes.com/wp-content/uploads/sao-paulo.png',
+
+        'https://logodetimes.com/wp-content/uploads/corinthians.png',
+
+        'https://logodetimes.com/wp-content/uploads/palmeiras.png',
+
+        'https://logodetimes.com/wp-content/uploads/santos.png'
+        ];
+        var aleatorizado = imagem[parseInt(Math.random() * imagem.length)]
+
+        div_paiDeImagens.innerHTML = `<img src="${aleatorizado}">`
+
+        
+    };
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero aleatorio</title>
+</head>
+<body>
+    <button onclick="gerar()">Gerar</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+
+    
+function gerar(){
+
+    var aleatorio = parseInt(Math.random() * 10);
+    var planoB = parseInt(Math.random() * 10);
+    var amostra = ``;
+
+    if(aleatorio>=1 && aleatorio<=6){
+        amostra = aleatorio;
+    } else{
+        aleatorio /= 2
+        amostra = parseInt(aleatorio);
+         if (parseInt(aleatorio) == 0){
+            if(planoB>6){
+                planoB /= 2
+            }
+             amostra = parseInt(aleatorio += planoB )
+         } 
+    }
+    exibir.innerHTML += amostra + `<br>`;
+   };
+
+</script>
+
+<!-- Resposta correta:
+(Math.random() * 6) + 1 -->

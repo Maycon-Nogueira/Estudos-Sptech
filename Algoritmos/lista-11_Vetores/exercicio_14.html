@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 14</title>
+</head>
+<body>
+    <span>Nome do produto</span>
+    <input id="input_nomeProduto">
+    <br>
+    <span> Preço da compra</span>
+    <input id="input_precoCompra">
+    <br>
+    <button onclick="cadastrar()"> Cadastrar</button>
+    <br>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <div id="div_exibirRelatorio"></div>
+</body>
+</html>
+<script>
+    var produtos = [];
+    var precos = [];
+
+    function cadastrar(){
+        produtos.push(input_nomeProduto.value);
+        precos.push(input_precoCompra.value);
+    }
+    
+    function relatorio(){
+        var valorRevenda = 0;
+        var relatorio = ``;
+
+        for( 
+        var numItem = 1;
+        numItem<=produtos.length;
+        numItem++
+        ){
+            valorRevenda = precos[numItem-1] *1.25;
+            relatorio += `
+            <br> Produto ${numItem}: ${produtos[numItem-1]} <br> preço da compra: R$${precos[numItem-1]}<br>
+            Vender por R$${valorRevenda} <br>
+            `
+        }
+
+        div_exibirRelatorio.innerHTML = `<h4> Relatório </h4>
+        <br> Total de produtos: ${produtos.length} <br> <br>
+        ${relatorio}`;
+    }
+
+</script>

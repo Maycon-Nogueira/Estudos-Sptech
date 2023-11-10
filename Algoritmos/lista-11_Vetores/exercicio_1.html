@@ -14,17 +14,14 @@
 </html>
 <script>
 
-    var lista = [];
+   
 
     function pesquisar(){
+         var lista = [`jabuticaba`, `maracuja`, `limao`, `laranja`, `pinha`, `jaca`, `kiwi`, `banana`, `melao`, `banana maca`,`melancia`];
         var itemPesquisado = input_pesquisa.value;
         var pesquisa = `Não existe a fruta ${itemPesquisado} na lista`;
 
-       lista.push(`banana maca`, `maracuja`, `limao`, `laranja`, `pinha`, `jaca`, `kiwi`, `banana`, `melao`, `melancia`);
-
-        
-
-       if(lista.indexOf(itemPesquisado.toLowerCase())>0){
+       if(lista.indexOf(itemPesquisado.toLowerCase())>=0){
         pesquisa = `a fruta ${itemPesquisado} existe na lista`
        };
         

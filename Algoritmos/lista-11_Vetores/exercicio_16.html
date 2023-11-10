@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 16</title>
+</head>
+<body>
+    <span>Digite um número qualquer</span>
+    <input type="text" id="input_numeroUsuario">
+    <button onclick="registrarNum()">Analisar histórico</button>
+    <div id="div_exibirNum"></div>
+    
+</body>
+</html>
+<script>
+    var listaNumeros = [];
+
+
+    function registrarNum(){
+        var numeroUsuario = input_numeroUsuario.value;
+        listaNumeros.push(numeroUsuario);
+
+        var exibicao = ``;
+        var maiorNumero = listaNumeros[0];
+        var menorNumero = listaNumeros[0];
+
+        for(
+            var posicao = 0;
+            posicao<listaNumeros.length;
+            posicao++
+        ){
+            if(listaNumeros[posicao]>maiorNumero){
+                maiorNumero = listaNumeros[posicao];
+            };
+
+            if(listaNumeros[posicao]<menorNumero){
+                menorNumero =listaNumeros[posicao]; 
+            }
+
+
+            exibicao +=  `${posicao + 1}º Número: ${listaNumeros[posicao]}<br>`
+        }
+
+        exibicao += `<br> O maior número é ${maiorNumero} <br> O menor número é ${menorNumero}`
+
+        div_exibirNum.innerHTML = exibicao;
+    };
+</script>

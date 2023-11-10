@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 13</title>
+</head>
+
+<body>
+    <span>Selecione o time que irá jogar</span>
+    <select id="time_selecionado">
+        <option value="null">Selecionar</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Corinthians">Corinthians</option>
+        <option value="Palmeiras">Palmeiras</option>
+        <option value="Santos">Santos</option>
+    </select>
+    <br>
+    <h3> Informe os resultados do time</h3>
+    <br>
+    <button onclick="vitoria()">Vitória</button>
+
+    <button onclick="empate()">Empate</button>
+
+    <button onclick="derrota()">Derrota</button>
+
+    <button onclick="receberPontos()">Registrar Campanha</button>
+    <br>
+    <span> Qual jogo deseja saber o resultado </span>
+    <input onkeyup="mostrarJogo()" id="input_jogoDesejado">
+    <div id="div_exibirCampanha"> </div>
+    <div id="div_jogoRevisitado"></div>
+
+</body>
+
+</html>
+<script>
+    var time = [];
+    var qtdJogos = 0;
+
+    function vitoria() {
+        time.push(3);
+        qtdJogos += 1;
+    };
+    function empate() {
+        time.push(1);
+        qtdJogos += 1;
+    };
+    function derrota() {
+        time.push(0);
+        qtdJogos += 1;
+    };
+
+    function receberPontos() {
+        var campanha = ``;
+        var timeSelecionado = time_selecionado.value;
+        var vitoria = 0;
+        var empate = 0;
+        var derrota = 0;
+
+
+        if (timeSelecionado == `São Paulo` || timeSelecionado == `Corinthians` || timeSelecionado == `Palmeiras` || timeSelecionado == `Santos`) {
+            for (
+                var ctgJogos = 0,
+                pontos = 0;
+                ctgJogos < qtdJogos;
+                ctgJogos++
+            ) {
+                if (time[ctgJogos] == 3) {
+                    vitoria += 1;
+                    pontos += 3
+                } else if (time[ctgJogos] == 1) {
+                    empate += 1;
+                    pontos += 1;
+                } else {
+                    derrota += 1;
+                }
+            }
+
+            var aproveitamento = pontos / ((qtdJogos * 3)) * 100
+
+            campanha = ` <br> <h1> RESULTADO </h1> <br>
+        O ${timeSelecionado} teve: <br>
+        ${vitoria} vitórias <br>
+        ${empate} empates <br>
+        ${derrota} derrotas <br>
+        ${qtdJogos} Jogos <br>
+        Pontuação total: ${pontos} <br>
+        Aproveitamento: ${aproveitamento.toFixed(2)}% <br> 
+        `} else {
+            campanha += `Selecione um time e informe seus resultados`;
+        }
+        div_exibirCampanha.innerHTML = campanha;
+    };
+
+    function mostrarJogo() {
+        var jogoDesejado = Number(input_jogoDesejado.value);
+        var timeSelecionado = time_selecionado.value;
+        var informacao = ``;
+
+        if (jogoDesejado - 1 > time.length) {
+            informacao = `Não foi cadastrado um ${jogoDesejado}º jogo`
+        } else if (time[jogoDesejado - 1] == 3) {
+            informacao = ` No ${jogoDesejado}º jogo, o ${timeSelecionado} Ganhou`;
+        } else if (time[jogoDesejado - 1] == 1) {
+            informacao = ` No ${jogoDesejado}º jogo, o ${timeSelecionado} Empatou`
+        } else if (time[jogoDesejado - 1] == 0) {
+            informacao = ` No ${jogoDesejado}º jogo, o ${timeSelecionado} Perdeu`
+        }
+        div_jogoRevisitado.innerHTML = `<br><strong>${informacao}</strong>`
+
+    };
+
+</script>

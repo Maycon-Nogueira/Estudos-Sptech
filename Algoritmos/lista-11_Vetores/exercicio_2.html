@@ -36,7 +36,7 @@
     }
 
     function primeiraViagem() {
-        if (destinos[0] == undefined) {
+        if (destinos.length == 0) {
             informacao = `Você ainda não viajou`;
         } else {
             informacao = `Sua primeira viagem foi para ${destinos[0]}`;
@@ -46,7 +46,7 @@
     }
 
     function terceiraViagem() { 
-        if (destinos[2] == undefined) {
+        if (destinos.length == 0) {
             informacao = `Você ainda não fez três viagens`;
         } else {
             informacao = `Sua terceira viagem foi para ${destinos[2]}`;
@@ -56,7 +56,7 @@
     }
 
     function ultimaViagem() { 
-    if(destinos[destinos.length-1] == undefined) {
+    if(destinos[destinos.length-1] == 0) {
         informacao = `Você ainda não fez viagens`;
         } else {
             informacao = `Sua última viagem foi para ${destinos[destinos.length-1]}`;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 15</title>
+</head>
+<body>
+    <span>Nome do produto</span>
+    <input id="input_nomeProduto">
+    <br>
+    <span> Preço da compra</span>
+    <input id="input_precoCompra">
+    <br>
+    <button onclick="cadastrar()"> Cadastrar</button>
+    <br>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <div id="div_exibirRelatorio"></div>
+    <div id="div_exibirComparacao"></div>
+</body>
+</html>
+<script>
+    var produtos = [];
+    var precos = [];
+
+    function cadastrar(){
+        produtos.push(input_nomeProduto.value);
+        precos.push(input_precoCompra.value);
+    }
+    
+    function relatorio(){
+        var valorRevenda = 0;
+        var relatorio = ``;
+        var valorProdutoCaro = Number(precos[0]);
+        var valorProdutoBarato = Number(precos[0]);
+        var produtoCaro = produtos[0];
+        var produtoBarato = produtos[0];
+        var somaPrecos = 0;
+        var mediaPrecos = 0;
+        var comparacao = ``;
+
+        for( 
+        var posicao = 1,
+        posicaoProduto = produtos[0],
+        posicaoPreco = precos[0];
+        posicao<=produtos.length;
+        posicao++
+        ){
+            posicaoProduto = produtos[posicao -1],
+            posicaoPreco = precos[posicao -1]
+            valorRevenda = posicaoPreco *1.25;
+
+            relatorio += `
+            <br> Produto ${posicao}: ${posicaoProduto} <br> preço da compra: R$${posicaoPreco}<br>
+            Vender por R$${valorRevenda} <br>
+            `
+
+            if (posicaoPreco>valorProdutoCaro){
+                produtoCaro = posicaoProduto;
+                valorProdutoCaro = posicaoPreco;
+            }
+
+            if (posicaoPreco<valorProdutoBarato){
+                produtoBarato = posicaoProduto;
+                valorProdutoBarato = posicaoPreco;
+            }
+
+            somaPrecos += Number(posicaoPreco);
+
+            mediaPrecos += Number(valorRevenda);
+        }
+
+        mediaPrecos /= precos.length;
+
+        comparacao = `
+        <br> Produto mais caro: ${produtoCaro} <br>
+
+        Produto mais barato: ${produtoBarato} <br>
+
+        Soma dos preços de compra: ${somaPrecos} <br>
+
+        Média de preço de venda: ${mediaPrecos.toFixed(2)} `
+
+        div_exibirRelatorio.innerHTML = `<h4> Relatório </h4>
+        <br> Total de produtos: ${produtos.length} <br> <br>
+        ${relatorio}` + comparacao;
+    }
+
+</script>
