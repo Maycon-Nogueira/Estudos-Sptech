@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+    <style>
+        #conteiner_imgs{
+            width: 200px;
+            height: 200px;
+        }
+
+        .imagem{
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="jogar()"> Jogar </button>
+    <div id="conteiner_imgs"></div>
+</body>
+</html>
+<script>
+    
+    function jogar() {
+        var imagem = [
+        "https://img.freepik.com/vetores-premium/folhas-em-branco-a4-de-papel-branco-com-diferentes-icones-de-efeitos-de-sombra-isolados-em-ilustracao-vetorial-de-fundo-branco_736051-654.jpg",
+
+        "https://e7.pngegg.com/pngimages/265/168/png-clipart-rock-boulder-rock-image-file-formats-stone.png",
+
+        "https://i.pinimg.com/originals/fb/e1/03/fbe1038fd2e0e7b6d75afec3e56374ed.png"
+        ];
+
+        var posicao = parseInt(Math.random()*imagem.length)
+
+        conteiner_imgs.innerHTML = `<img class="imagem" src=${imagem[posicao]}> `
+    }
+</script>

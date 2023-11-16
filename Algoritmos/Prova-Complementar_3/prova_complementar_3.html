@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova complementar 3</title>
+</head>
+
+<body>
+    <span>Nome do astronauta</span>
+    <input id="input_nomeAstronauta">
+    <br>
+    <span>Quantidade de dias</span>
+    <input id="qtdDias">
+    <br>
+    <span>Quantidade de horas</span>
+    <input id="qtdHoras">
+    <br>
+    <span>Quantidade de minutos</span>
+    <input id="qtdMin">
+    <br>
+    <button onclick="registrar()"> Registrar viagem </button>
+    <br>
+    <button onclick="mostrarRelatorio()">Relatório de viagens</button>
+    <div id="div_exibirRelatorio"></div>
+
+
+</body>
+
+</html>
+<script>
+    var astronautas = []
+    var minutos = [];
+
+    function registrar() {
+
+        var diasViagem = Number(qtdDias.value);
+        var horasViagem = Number(qtdHoras.value);
+        var minViagem = Number(qtdMin.value);
+
+
+        if (diasViagem <= 0 && horasViagem <= 0 && minViagem <= 0) {
+            alert(`Ao menos uma das informações tem de ser maior que 0`);
+        } else {
+            astronautas.push(input_nomeAstronauta.value);
+
+            minutos.push(minViagem + (horasViagem * 60) + (diasViagem * 1440));
+        }
+
+    };
+
+    function mostrarRelatorio(){
+        var relatorio = ``;
+        var img_crianca = ``;
+
+        for(
+            var verificacao_registros = 1,
+            tranforma_minutos = 0,
+            qtdAnosFora = 0;
+            verificacao_registros<=astronautas.length;
+            verificacao_registros++
+        ){
+             tranforma_minutos = Number( minutos[verificacao_registros - 1]) * 49;
+
+             qtdAnosFora = tranforma_minutos/525600;
+
+            // img_crianca = `<img src="imgs/crianca.png" alt="Bart_criança">`;
+
+             if(qtdAnosFora>100){
+                img_crianca = `<img src="imgs/crianca_100anos.png" alt="Bart_falecido">`;
+             } else if(qtdAnosFora>65){
+                img_crianca = `<img src="imgs/crianca_65anos.png" alt="Bart_idoso">`;
+             } else if(qtdAnosFora>30){
+                img_crianca = `<img src="imgs/crianca_30anos.png" alt="Bart_adulto">`;
+             } else if(qtdAnosFora>13){
+                img_crianca = `<img src="imgs/crianca_13anos.png" alt="Bart_adolescente">`;
+             } else {
+                img_crianca = `<img src="imgs/crianca.png" alt="Bart_Simpson">`
+             };
+
+            relatorio += `
+            <br><h3> Viagem  ${verificacao_registros} </h3><br>
+            <br> Astronauta ${astronautas[verificacao_registros - 1]} ficou fora por pelo menos ${qtdAnosFora} anos no tempo da Terra.<br>
+            A criança que nasceu quando ele saiu provavelmente está assim:
+            ${img_crianca} <br>
+            `;   
+        };
+            div_exibirRelatorio.innerHTML = relatorio 
+    };
+
+
+
+</script>

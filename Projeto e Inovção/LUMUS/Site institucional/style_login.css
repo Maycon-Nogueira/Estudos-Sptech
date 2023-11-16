@@ -191,6 +191,19 @@ h1 {
     color: #5c5c5c;
 }
 
+
+/* Começo calculadora */
+
+.div_home_calculadora {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #3F949C;
+    height: 100vh;
+
+}
+
 .card_calculadora {
     width: 1000px;
     height: 520px;
@@ -203,13 +216,19 @@ h1 {
 
 }
 
+.formulario_calculadora{
+    height: 100%;
+}
+
 .formulario_calculadora h1 {
     grid-row: 1;
     text-align: center;
     justify-content: center;
     color: #f0ca05;
+}
 
-
+.subtitulo{
+    color:#F1FAFF ;
 }
 
 .formulario_calculadora input {
@@ -222,6 +241,8 @@ h1 {
     outline: none;
     padding: 0% 5%;
     font-style: italic;
+    margin: 5px 0 8px 0;
+    background-color: rgb(242, 250, 170);
 }
 
 .formulario_calculadora select {
@@ -233,6 +254,8 @@ h1 {
     outline: none;
     padding: 0% 4%;
     font-style: italic;
+    margin: 5px 0 8px 0;
+    background-color: rgb(242, 252, 170);
 }
 
 .container .card_calculadora {
@@ -245,9 +268,10 @@ h1 {
 .formulario_calculadora .div_itens {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
     margin-top: 5px;
+    color:#F1FAFF
 
 }
 
@@ -275,26 +299,53 @@ h1 {
     margin-top: 5px;
 }
 
+
 .div_resultado {
     width: 1000px;
-    height: 320px;
+    height: 520px;
     border-radius: 20px;
+    display: none;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 23px;
 
+    background-color: #fafcc9;
+    position: fixed;
+    opacity: 0.95;
+    border: #f0ca05 4px solid;
+    text-align: justify;
+    top: 90px
 }
 
-.div_home_calculadora {
-
+#div_informacao{
+    height: 100%;
+    width: 98%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    background: #3F949C;
-    height: 1080px;
-
-
+    justify-content: space-around;
 }
+
+.divisaoResultado{
+    margin: 10px 24px;
+    font-size: 19px;
+    line-height: 2;
+}
+
+#botao_fechar{
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 950px;
+    
+}
+
+#botao_fechar img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 
 .container_calculadora {
     align-items: end;
