@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tênis Clube SPTECH</title>
+    <style>
+        body {
+            display: flex;
+            align-items: stretch;
+        }
+
+        body div:first-child,
+        body div:nth-of-type(2) {
+            padding: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        body div:nth-of-type(2) {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="input_qtd_partidas">
+            Rodadas máximas:
+            <input id="input_qtd_partidas" /><br />
+        </label>
+
+        <button onclick="realizar_partida()">Realizar partida</button>
+
+        <h3>Informe as partidas que deseja relembrar</h3>
+
+        <label for="input_inicio_intervalo">Início:</label>
+        <input id="input_inicio_intervalo" />
+        <label for="input_fim_intervalo">Fim:</label>
+        <input id="input_fim_intervalo" />
+
+        <button onclick="relembrar_partidas()">Relembrar</button>
+    </div>
+    <div>
+        <h3>Painel</h3>
+        <div id="div_painel"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var partida = [];
+    var pontos_priJogador = [];
+    var pontos_segJogador = [];
+
+    function realizar_partida() {
+        var rodadas_max = input_qtd_partidas.value;
+        var soma_pontosJ1 = 0;
+        var soma_pontosJ2 = 0;
+        var texto_pontos = ``;
+
+        if (rodadas_max <= 0) {
+            alert(`O número de rodadas máximas deve ser maior que 0`);
+        } else if (partida.length >= rodadas_max) {
+            alert(`O número de partidas foi excedido`)
+        } else {
+            partida.push(partida.length + 1);
+            pontos_priJogador.push(parseInt(Math.random() * 10 + 1));
+            pontos_segJogador.push(parseInt(Math.random() * 10 + 1));
+
+            for (
+                var rodadas = 0;
+                rodadas < partida.length;
+                rodadas++
+            ) {
+
+                soma_pontosJ1 += pontos_priJogador[rodadas];
+                soma_pontosJ2 += pontos_segJogador[rodadas];
+
+                texto_pontos += `
+                <br> Rodada ${rodadas + 1}: <br>
+                Jogador 1: ${pontos_priJogador[rodadas]} <br>
+                Jogador 2: ${pontos_segJogador[rodadas]} <br>
+                Total jogador 1: ${soma_pontosJ1} <br>
+                Total jogador 2: ${soma_pontosJ2} <br>
+                `}
+
+            div_painel.innerHTML = texto_pontos;
+        }
+    };
+
+    function relembrar_partidas() {
+        var inicio_intervalo = Number(input_inicio_intervalo.value);
+        var final_intervalo = Number(input_fim_intervalo.value);
+        var soma_pontosJ1 = 0;
+        var soma_pontosJ2 = 0;
+        var texto_pontos = ``;
+
+        if (inicio_intervalo == 0 ||
+            final_intervalo == 0 ||
+            inicio_intervalo > final_intervalo ||
+            final_intervalo > partida.length) {
+            alert(`O intervalo pesquisado não é válido, insira valores coerentes`)
+        } else {
+            for (
+                var mostrarRodada = 0;
+                mostrarRodada < partida.length;
+                mostrarRodada++
+            ) {
+
+                soma_pontosJ1 += pontos_priJogador[mostrarRodada];
+                soma_pontosJ2 += pontos_segJogador[mostrarRodada];
+
+                if (partida[mostrarRodada] >= inicio_intervalo && partida[mostrarRodada] <= final_intervalo) {
+                    texto_pontos += `
+                <br> Rodada ${mostrarRodada + 1}: <br>
+                Jogador 1: ${pontos_priJogador[mostrarRodada]} <br>
+                Jogador 2: ${pontos_segJogador[mostrarRodada]} <br>
+                Total jogador 1: ${soma_pontosJ1} <br>
+                Total jogador 2: ${soma_pontosJ2} <br>
+                `
+                }
+            }
+            div_painel.innerHTML = texto_pontos;
+        }
+    };
+</script>

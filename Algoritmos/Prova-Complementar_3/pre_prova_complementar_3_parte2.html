@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré prova pt 2</title>
+</head>
+
+<body>
+    <span>Insira o código do produto: </span>
+
+    <input id="input_codigoProduto">
+    <br>
+    <span>Insira o nome do produto: </span>
+    <input id="input_nomeProduto">
+    <br>
+    <span>Insira a quantidade do produto: </span>
+    <input id="input_qtdProduto">
+    <br>
+    <button onclick="registrarProduto()"> Salvar produto</button>
+    <button onclick="exibirEstoque()"> Ver estoque </button>
+    <div id="div_mostraEstoque"></div>
+
+</body>
+
+</html>
+
+<script>
+    var listaCodigosProd = [];
+    var listaNomeProd = [];
+    var listaQtdProd = [];
+    var listaPrecos = [];
+
+    function registrarProduto() {
+        var cdgProd = input_codigoProduto.value;
+        var nomeProd = input_nomeProduto.value;
+        var qtdProd = Number(input_qtdProduto.value);
+        var PrecoProd = Math.random() * 1000;
+        
+
+
+        if (cdgProd.replaceAll(" ", "") == "") {
+            alert(`Código inválido para o produto`);
+        } else if (nomeProd.replaceAll(" ", "") == "") {
+            alert(`Nome inválido para o produto`);
+        } else if (qtdProd <= 0) {
+            alert(`Quantidade inválida para o produto`);
+        } else {
+
+            if (listaCodigosProd.length == 0) {
+
+                listaCodigosProd.push(cdgProd);
+                listaNomeProd.push(nomeProd);
+                listaQtdProd.push(qtdProd);
+                listaPrecos.push(PrecoProd);
+
+                alert(`Produto cadastrado com sucesso!`)
+            }  else {
+
+
+                for (
+                    var verificaExistencia = 0;
+                    verificaExistencia < listaCodigosProd.length;
+                    verificaExistencia++
+                ) {
+                    if (listaCodigosProd[verificaExistencia] >= cdgProd) {
+                        listaQtdProd[verificaExistencia] += qtdProd;
+
+                        alert(`O produto de código ${cdgProd} teve sua quantidade aumentada`);
+                        break;
+                    } else if(verificaExistencia == listaCodigosProd.length - 1){
+                        listaCodigosProd.push(cdgProd);
+                        listaNomeProd.push(nomeProd);
+                        listaQtdProd.push(qtdProd);
+                        listaPrecos.push(PrecoProd);
+
+                        alert(`Produto cadastrado com sucesso!`)
+                        break;
+                    }
+                  
+                }
+            }
+        }
+    }
+
+    function exibirEstoque(){
+       var estoqueAtual = `<h1> Estoque atual </h1>`;
+
+       for(
+        itemLista = 0;
+        itemLista<listaCodigosProd.length;
+        itemLista++
+       ){
+
+       estoqueAtual += `
+                   <br> Código do produto: ${listaCodigosProd[itemLista]} <br>
+                    Nome do produto: ${listaNomeProd[itemLista]} <br>
+                    Quantidade do produto: ${listaQtdProd[itemLista]} <br>
+                    Preço do produto: ${listaPrecos[itemLista].toFixed(2)}<br> 
+                    `;
+
+       }
+                    div_mostraEstoque.innerHTML = estoqueAtual;
+    }
+
+</script>
